@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRX-APON DEVELOPER - প্রিমিয়াম গেমিং প্ল্যাটফর্ম</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        body {
+            background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(15, 23, 42, 0.92)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .header-title {
+            background: rgba(20, 24, 33, 0.85);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+        .logo-box {
+            width: 130px;
+            height: 130px;
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 30px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(43, 81, 237, 0.4);
+            border: 2px solid rgba(56, 189, 248, 0.6);
+            overflow: hidden;
+        }
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tagline {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(56, 189, 248, 0.4);
+        }
+        .features-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .social-box {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 41, 59, 0.85);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+        }
+        .social-btn.youtube {
+            color: #ff4d4d;
+        }
+        .social-btn.tiktok {
+            color: #ffffff;
+        }
+        .social-btn:active {
+            transform: scale(0.95);
+        }
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #2b51ed, #0284c7);
+            color: white;
+            padding: 16px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(43, 81, 237, 0.5);
+            margin-bottom: 30px;
+            transition: 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .stat-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 25px 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .stat-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(43, 81, 237, 0.2);
+            color: #38bdf8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin: 0 auto 15px;
+        }
+        .stat-card:nth-child(2) .stat-icon {
+            background: rgba(19, 115, 51, 0.25);
+            color: #4ade80;
+        }
+        .stat-card:nth-child(3) .stat-icon {
+            background: rgba(147, 51, 234, 0.25);
+            color: #c084fc;
+        }
+        .stat-card:nth-child(4) .stat-icon {
+            background: rgba(194, 65, 12, 0.25);
+            color: #fb923c;
+        }
+        .stat-number {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-title">
+            TRX-TOURNAMENT - প্রিমিয়াম গেমিং প্ল্যাটফর্ম
+        </div>
+
+        <div class="logo-box">
+            <img src="https://i.ibb.co.com/M5f5pBZn/logo.jpg" alt="TRX Custom Logo" onerror="this.onerror=null; this.src='https://i.ibb.co/M5f5pBZn/logo.jpg';">
+        </div>
+
+        <div class="tagline">বাংলাদেশের #১ ট্রাস্টেড প্ল্যাটফর্ম</div>
+        <div class="brand-name">TRX--APON DEVELOPER</div>
+
+        <div class="features-row">
+            <span>🎮 খেলুন</span> • <span>🏆 জিতুন</span> • <span>⚡ উপভোগ করুন</span>
+        </div>
+
+        <div class="social-box">
+            <a href="https://www.youtube.com/@TRX-APON" target="_blank" class="social-btn youtube">
+                <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+            <a href="https://tiktok.com/@trxapongamer" target="_blank" class="social-btn tiktok">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+        </div>
+
+        <a href="https://www.mediafire.com/file/tsswahgyd3sg4vi/5_6311959117309158745.apk/file" target="_blank" class="download-btn">
+            <i class="fa-solid fa-download"></i> অ্যাপ ডাউনলোড করুন (APK)
+        </a>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-download"></i></div>
+                <div class="stat-number">৩০K+</div>
+                <div class="stat-label">সফল ডাউনলোড</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-number">১০K+</div>
+                <div class="stat-label">সক্রিয় খেলোয়াড়</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="stat-number">২৪/৭</div>
+                <div class="stat-label">সাপোর্ট সেবা</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="stat-number">৬+</div>
+                <div class="stat-label">গেম মোড</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+              </html>
+
